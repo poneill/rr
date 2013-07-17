@@ -1,0 +1,35 @@
+#!/bin/bash 
+
+# This shell script initializes a directory for use in a reproducible
+# research project.  
+
+# Usage: 
+# rr_template my_project_name
+
+PROJECT_NAME=$1
+USER_HOME=$(eval echo ~$USER)
+echo ${USER_HOME}
+# http://stackoverflow.com/questions/59895/
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+echo $DIR
+
+mkdir $PROJECT_NAME
+cd $1
+
+# copy template over
+cp -R $DIR/. .
+rm rr_template
+
+#Setup git
+git init
+git add .
+git commit -m "Initializing repository for $PROJECT_NAME"
+
+#Add my bibtex as a submodule
+GITHUB_REFS=git@github.com:poneill/bib.git
+GITHUB_UTILS=git@github.com:poneill/python_utils.git
+git submodule add $GITHUB_REFS pub/refs
+git submodule add $GITHUB_UTILS src/utils
+
+git add .
+git commit -m "Added submodules"

@@ -1,0 +1,15 @@
+# Latex files
+*.pdf
+*.log
+*.aux
+
+# Graphic files
+*.png
+*.ps
+*.eps
+
+# Code files
+*.pyc
+
+# Emacs nuisances
+.#*
