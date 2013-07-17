@@ -1,9 +1,8 @@
-
 * Overview
+  =rr= is a tool for facilitating reproducible research.  It is
+  currrently in an extremely unstable state.  Currently, its main
+  function is to create templates for new projects. 
 
-* Installation
-
-At the command line type:
-
-: make all
-
+  You are welcome to use =rr= (see COPYING), but be advised that it
+  will currently unusable for you without modification.  Suggestions
+  and pull requests are very welcome.
