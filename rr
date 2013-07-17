@@ -18,7 +18,12 @@ cd $1
 
 # copy template over
 cp -R $DIR/. .
+# remove this file from the target directory
 rm rr_template
+# Replace the rr project README (which describes rr) with
+# README_template (which should describe the target project)
+mv README_template.org README.org
+
 
 #Setup git
 git init
