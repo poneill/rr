@@ -9,19 +9,10 @@
 PROJECT_NAME=$1
 USER_HOME=$(eval echo ~$USER)
 # http://stackoverflow.com/questions/59895/
-DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-
-mkdir $PROJECT_NAME
-cd $1
-
-# copy template over
-cp -R $DIR/. .
-# remove this file from the target directory
-rm rr_template
-# Replace the rr project README (which describes rr) with
-# README_template (which should describe the target project)
-mv README_template.org README.org
-
+RR_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+TEMPLATE_DIR="$RR_DIR/project_template"
+cp -r $TEMPLATE_DIR $PROJECT_NAME
+cd $PROJECT_NAME
 
 #Setup git
 git init
