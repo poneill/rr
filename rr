@@ -8,10 +8,8 @@
 
 PROJECT_NAME=$1
 USER_HOME=$(eval echo ~$USER)
-echo ${USER_HOME}
 # http://stackoverflow.com/questions/59895/
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-echo $DIR
 
 mkdir $PROJECT_NAME
 cd $1
