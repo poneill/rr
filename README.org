@@ -6,3 +6,12 @@
   You are welcome to use =rr= (see COPYING), but be advised that it
   will currently unusable for you without modification.  Suggestions
   and pull requests are very welcome.
+
+* Planned development / Wishlist
+** Project initialization
+: rr project my_project
+** Near-automatic dependency tracking
+: rr dep result dependency1 dependency1
+: rr dep add result dependency3
+: rr dep rm result dependency 
+: rr stat # lists files without Makefile status
