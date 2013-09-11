@@ -6,6 +6,18 @@
 # Usage: 
 # rr_template my_project_name
 
+# following functions taken from http://stackoverflow.com/questions/7868818
+warn () {
+    echo "$0:" "$@" >&2
+}
+die () {
+    rc=$1
+    shift
+    warn "$@"
+    exit $rc
+}
+
+test $1 || die 1 "Supply a project name"
 PROJECT_NAME=$1
 USER_HOME=$(eval echo ~$USER)
 # http://stackoverflow.com/questions/59895/
