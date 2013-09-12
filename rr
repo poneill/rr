@@ -21,7 +21,9 @@ test $1 || die 1 "Supply a project name"
 PROJECT_NAME=$1
 USER_HOME=$(eval echo ~$USER)
 # http://stackoverflow.com/questions/59895/
-RR_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+#RR_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+RR_DIR=/home/poneill/rr #really, this should be initialized at setup
+echo $RR_DIR
 TEMPLATE_DIR="$RR_DIR/project_template"
 cp -r $TEMPLATE_DIR $PROJECT_NAME
 cd $PROJECT_NAME
@@ -35,7 +37,7 @@ git commit -m "Initializing repository for $PROJECT_NAME"
 GITHUB_REFS=git@github.com:poneill/bib.git
 GITHUB_UTILS=git@github.com:poneill/python_utils.git
 git submodule add $GITHUB_REFS pub/refs
-git submodule add $GITHUB_UTILS src/utils
+git submodule add $GITHUB_UTILS lib/utils
 
 git add .
 git commit -m "Added submodules"
