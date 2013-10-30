@@ -1,3 +1,3 @@
 #!/bin/bash
 
-ln -s /home/poneill/rr/rr /usr/bin/rr #Robustify this
+ln -s $HOME/rr/rr /usr/bin/rr #Robustify this
