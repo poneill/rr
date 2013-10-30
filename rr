@@ -22,7 +22,7 @@ PROJECT_NAME=$1
 USER_HOME=$(eval echo ~$USER)
 # http://stackoverflow.com/questions/59895/
 #RR_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-RR_DIR=/home/poneill/rr #really, this should be initialized at setup
+RR_DIR=$HOME/rr #really, this should be initialized at setup
 echo $RR_DIR
 TEMPLATE_DIR="$RR_DIR/project_template"
 cp -r $TEMPLATE_DIR $PROJECT_NAME
